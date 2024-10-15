@@ -1,0 +1,10 @@
+1,the car is good and smell nice,3.000000
+2,the driver is nice and know the map well,4.000000
+3,the driver is rude to me!!!,5.000000
+Loc4,nice passenger,4.000000
+Ngoc5,good looking passenger,4.000000
+Truc6,wow,4.000000
+Duy16,nice ride,4.500000
+Dat8, its ok,3.000000
+Nghi1,the passenger litter on my car,1.000000
+Dat7,The driver is driendly,5.000000

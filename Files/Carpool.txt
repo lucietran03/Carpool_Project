@@ -1,0 +1,14 @@
+1,RMIT Saigon Campus,Ben Thanh Market,12.50,30.02.2024,Nissan,red,12345,4,100.000000,3.000000,Dinh3,1
+2,RMIT Hanoi Campus,Hoan Kiem Lake,12.50,22.6.2024,Toyota,blue,54321,7,50.000000,2.000000,Nghi1,0
+3,Hoan Kiem Lake,RMIT Hanoi Campus,03.50,10.05.2026,Ford,yellow,67890,3,50.000000,4.000000,Dat2,0
+4,RMIT Saigon Campus,Tan Son Nhat Airport,08.30,05.07.2024,Honda,black,11223,4,100.000000,3.000000,Nam11,0
+5,Tan Son Nhat Airport,RMIT Saigon Campus,09.00,12.08.2024,Mazda,white,33445,7,100.000000,2.000000,Huy13,0
+6,RMIT Hanoi Campus,Buu Dien Ha Noi,07.45,19.09.2024,Kia,grey,55667,3,50.000000,4.000000,Trang14,0
+7,City center,RMIT Saigon Campus,06.30,25.11.2024,Hyundai,silver,77889,9,50.000000,3.000000,Linh20,0
+8,Buu Dien Ha Noi,RMIT Hanoi Campus,05.50,15.12.2024,BMW,blue,99001,4,50.000000,4.000000,Hoa17,0
+9,RMIT Saigon Campus,City center,04.20,30.10.2025,Chevrolet,green,22334,7,50.000000,2.000000,Lan22,0
+10,Hoan Kiem Lake,RMIT Hanoi Campus,02.15,10.01.2025,Mercedes,black,55677,3,50.000000,5.000000,Tuan18,0
+11,RMIT Saigon Campus,Ben Thanh Market,11.00,02.03.2025,Ford,red,77890,9,100.000000,4.000000,Khanh19,0
+12,Ben Thanh Market,RMIT Saigon Campus,09.30,18.05.2025,Toyota,white,33456,4,100.000000,3.000000,Minh21,0
+13,RMIT Hanoi Campus,Buu Dien Ha Noi,12.00,28.02.2025,Nissan,blue,44567,7,50.000000,2.000000,Bao23,0
+14,RMIT Saigon Campus,Tan Son Nhat Airport,06.45,20.06.2025,Honda,black,55678,16,100.000000,4.000000,Thanh24,0
