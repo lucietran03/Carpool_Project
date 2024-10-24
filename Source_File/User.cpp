@@ -145,37 +145,11 @@ void User::userregister(vector<User> &userList)
     // Loop to validate and input the password
     do
     {
-        check = 0;
-        cout << "Enter your password (8 to 16 characters, no spaces): ";
+        
+        cout << "Enter your password (8 to 16 characters, no spaces or special characters): ";
         getline(cin, password);
 
-        // Check if password is empty
-        if (password.empty())
-        {
-            cout << "\nPassword cannot be empty. Please try again.\n";
-            check = 1;
-        }
-        // Check if password length is less than 8 or greater than 16
-        else if (password.length() < 8 || password.length() > 16)
-        {
-            cout << "Password must be between 8 and 16 characters long. Please try again.\n";
-            check = 1;
-        }
-        else
-        {
-            // Check if password contains spaces
-            for (char c : password)
-            {
-                if (c == ' ')
-                {
-                    cout << "Password cannot have spaces. Please try again.\n";
-                    check = 1;
-                    break;
-                }
-            }
-        }
-
-    } while (check == 1); // Repeat until a valid password is entered
+    } while (!passwordCheck(password)); // Repeat until a valid password is entered
 
     // Input and validate full name
     do
@@ -361,6 +335,54 @@ void User::userregister(vector<User> &userList)
     userList.push_back(new_user);
 }
 
+// Password checking for new user registering:
+bool User::passwordCheck(string password)
+{
+    int upperIncluded = 0;
+
+    // Check if password is empty
+    if (password.empty())
+    {
+        cout << "\nPassword cannot be empty. Please try again.\n";
+        return false;
+    }
+    // Check if password length is less than 8 or greater than 16
+    else if (password.length() < 8 || password.length() > 16)
+    {
+        cout << "Password must be between 8 and 16 characters long. Please try again.\n";
+        return false;
+    }
+    else
+    {
+        // Check if password contains spaces
+        for (char c : password)
+        {
+            if (c == ' ')
+            {
+                cout << "Password cannot have spaces. Please try again.\n";
+                return false;
+            }
+            else if(!isalpha(c))
+            {
+                cout << "Password cannot contain any special characters. Please try again.\n";
+                return false;
+            }
+            else if(isupper(c))
+            {
+                upperIncluded = 1;
+            }
+        }
+    }
+
+    if(!upperIncluded)
+    {
+        cout << "Password must contain at least 1 upper character. Please try again.\n";
+        return false; // No upper letter included 
+    }
+
+    return true;
+}
+
 // Function to log in
 void User::viewheader()
 {
@@ -399,7 +421,7 @@ void User::updateprofile()
     cout << "|        UPDATE       |\n";
     cout << "|=====================|\n";
 
-    cout << "|1.Your name.         |\n|2.Your numberphone.  |\n|3.Your email.        |\n";
+    cout << "|1.Your name.         |\n|2.Your phone number.  |\n|3.Your email.        |\n";
     if (IDtype == 1)
         cout << "|4.Your ID.           |\n|5.Your address.       |\n|6.Your password.     |\n";
     else

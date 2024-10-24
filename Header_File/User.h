@@ -75,6 +75,7 @@ public:
     bool getisVerified() const;
 
     void userregister(vector<User> &userList);
+    bool passwordCheck(string password);
     void viewprofile();
     void updateprofile();
     void changepassword();
@@ -85,3 +86,5 @@ public:
     string to_stringUser();
 };
 #endif
+
+// Feedback: Use friend functions instead of using getters and setters functions
