@@ -585,7 +585,7 @@ void User::purchaseCreditPoints(double amount)
 }
 
 // Function to log in
-bool login(string &temp, User &user, vector<User> &userList, int role)
+bool login(User &user, vector<User> &userList, int role) // 1: admin, 2: Passenger, 3: Driver
 {
     string input1, input2;
     cin.ignore();
@@ -614,7 +614,6 @@ bool login(string &temp, User &user, vector<User> &userList, int role)
         return false; // Failed login
     }
 
-    temp = input1;
     // Check if the logged-in user matches the role
     switch (role)
     {
@@ -625,7 +624,7 @@ bool login(string &temp, User &user, vector<User> &userList, int role)
             int admincode;
             cin >> admincode;
 
-            if (admincode == ADMIN_CODE && user.getisAdmin())
+            if (admincode == ADMIN_CODE)
             {
                 cout << "You are logged in as Admin.\n";
                 return true; // Admin role successful

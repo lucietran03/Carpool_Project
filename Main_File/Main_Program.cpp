@@ -87,11 +87,18 @@ int main()
             Nonmem_dashboad(userList, carpool_list); // Display the dashboard for non-members
             break;
         case 2:
-            if (login(temp, user, userList, 1)) // Login as admin
+            if (login(user, userList, 1))
+            {
+                Admin admin = static_cast<Admin &>(user); // Ép kiểu từ User thành Admin (reference)
                 Admin_dashboad(admin, userList, carpool_list);
+            } // Login as admin
             break;
         case 3:
-            if (loginPassenger(temp, passenger, userList)) // Login as passenger
+            if (login(user, userList, 2)) // Login as passenger
+            {
+                Passenger passenger = static_cast<Passenger &>(user); // Ép kiểu từ User thành Passenger (reference)
+            
+            }
                 Passenger_dashboad(temp, passengerlist, carpool_list, requests, rating_list);
             break;
         case 4:
