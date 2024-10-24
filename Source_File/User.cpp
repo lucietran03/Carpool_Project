@@ -302,13 +302,13 @@ void User::userregister(vector<User> &userList)
         cout << "[4] Passenger & Driver\n";
         cout << "Enter your choice: ";
         cin >> choice;
-        cin.ignore(1, '\n');
 
         switch (choice)
         {
         case 1:
             cout << "Enter admin registration confirmation code: ";
             int admincode;
+            cin >> admincode;
             if (ADMIN_CODE == admincode)
             {
                 cout << "You are registered as admin.\n";
@@ -564,8 +564,18 @@ void User::changepassword()
     do
     {
         choice = 0;
-        cout << "Enter your new password (no spaces): ";
+
+        // Hide password
+        HANDLE hStdin = GetStdHandle(STD_INPUT_HANDLE); 
+        DWORD mode = 0;
+        GetConsoleMode(hStdin, &mode);
+        SetConsoleMode(hStdin, mode & (~ENABLE_ECHO_INPUT));
+
+        cout << "Enter your new password: ";
         getline(cin, temp);
+
+        SetConsoleMode(hStdin, mode);
+
         deletespace(temp);
 
         // Check if password is empty
@@ -597,6 +607,7 @@ void User::changepassword()
 
     this->password = temp;
 }
+
 void User ::setCredit(double amount)
 {
     this->creditpoint = this->creditpoint - amount;
