@@ -178,7 +178,7 @@ vector<Carpool> FileSaving::loadCarpool(vector<Request> &requests, vector<Passen
 }
 
 // Method to load user data from file
-vector<User> FileSaving::loadUser(vector<User> &userlist, vector<Driver> &driverlist, vector<Passenger> &passengerlist, vector<DriverRating> &driver_rate, vector<Request> &requests, vector<Carpool> &carpool_list)
+tuple<vector<User>, vector<Driver>, vector<Passenger>> FileSaving::loadUser(vector<User> &userlist, vector<Driver> &driverlist, vector<Passenger> &passengerlist, vector<DriverRating> &driver_rate, vector<Request> &requests, vector<Carpool> &carpool_list)
 {
     fstream myFile;
     myFile.open(UserFile, ios::in);
@@ -261,7 +261,7 @@ vector<User> FileSaving::loadUser(vector<User> &userlist, vector<Driver> &driver
     }
 
     myFile.close();
-    return user_list;
+    return make_tuple(user_list, driverlist, passengerlist);
 }
 
 // Method to save carpool data to file

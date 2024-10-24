@@ -48,7 +48,7 @@ int main()
     vector<Driver> driverList;
     vector<Passenger> passengerlist;
     vector<User> userList;
-    userList = fileSave.loadUser(userList, driverList, passengerlist, driver_rate, requests, carpool_list);
+    tie(userList, driverList, passengerlist) = fileSave.loadUser(userList, driverList, passengerlist, driver_rate, requests, carpool_list);
 
     // Display the program information
     cout << "EEET2482/EEET2653 ASSIGNMENT" << '\n';
@@ -112,7 +112,6 @@ int main()
     fileSave.saveUser(userList);                      // Save User data to file
     return 0;
 }
-
 
 // Function to view carpool with average rating less than or equal to 3
 void view_carpool(vector<Carpool> &Carpool_list)

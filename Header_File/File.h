@@ -8,6 +8,7 @@
 // #include "Rating.h"
 #include "Request.h"
 #include "Carpooling.h"
+#include <tuple>
 
 class Rating;
 class Passenger;
@@ -28,7 +29,7 @@ public:
     vector<Rating> loadRating(vector<DriverRating> &driver_rate, vector<PassengerRating> &passenger_rate);
     vector<Request> loadRequest();
     vector<Carpool> loadCarpool(vector<Request> &requests, vector<PassengerRating> &passenger_rate);
-    vector<User> loadUser(vector<User> &userlist, vector<Driver> &driverlist, vector<Passenger> &passengerlist, vector<DriverRating> &driver_rate, vector<Request> &requests, vector<Carpool> &carpool_list);
+    tuple<vector<User>, vector<Driver>, vector<Passenger>> loadUser(vector<User> &userlist, vector<Driver> &driverlist, vector<Passenger> &passengerlist, vector<DriverRating> &driver_rate, vector<Request> &requests, vector<Carpool> &carpool_list);
     void saveCarpool(vector<Carpool> &carpool_list); 
     void saveRequest(vector<Request> &requests); 
     void saveRating(vector<PassengerRating> &passenger_rate, vector<DriverRating> &driver_rate); 
