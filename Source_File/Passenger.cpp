@@ -52,6 +52,7 @@ bool Passenger::book_carpool(vector<Carpool> &carpools, vector<Request> &request
     {
         cout << "Enter the carID (Press 0 to exit): ";
         cin >> Id;
+        cin.ignore(1, '\n');
 
         if (Id == 0)
         {

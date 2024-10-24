@@ -25,6 +25,7 @@ void DriverRating::submit_rating(Carpool &acarpool) // Call this one when status
         cout << "Score: ";
         double score_draft;
         cin >> score_draft;
+        cin.ignore(1, '\n');
         cout << "Comment: ";
         string comment_draft;
         cin.ignore();
@@ -45,6 +46,7 @@ void PassengerRating::submit_rating(Carpool &acarpool) // Call this one when sta
     cout << "Score: ";
     double score_draft;
     cin >> score_draft;
+    cin.ignore(1, '\n');
     cout << "Comment: ";
     string comment_draft;
     cin.ignore();

@@ -80,6 +80,7 @@ int main()
 
         cout << "Enter your choice: ";
         cin >> input;
+        cin.ignore(1, '\n');
 
         switch (input)
         {
@@ -112,7 +113,6 @@ int main()
     fileSave.saveUser(userList);                      // Save User data to file
     return 0;
 }
-
 
 // Function to view carpool with average rating less than or equal to 3
 void view_carpool(vector<Carpool> &Carpool_list)
@@ -155,6 +155,7 @@ void Nonmem_dashboad(vector<User> &userlist, vector<Carpool> &Carpool_list)
 
         cout << "Enter your choice: ";
         cin >> input;
+        cin.ignore(1, '\n');
 
         switch (input)
         {
@@ -191,6 +192,7 @@ void Admin_dashboad(Admin &admin, vector<User> &userlist, vector<Carpool> &carpo
         cout << "|==============================|\n";
         cout << "Enter your choice: ";
         cin >> choice;
+        cin.ignore(1, '\n');
 
         switch (choice)
         {
@@ -240,6 +242,7 @@ void Passenger_dashboad(string &temp, vector<Passenger> &passList, vector<Carpoo
         cout << "|=================================================|\n";
         cout << "Enter your choice: ";
         cin >> input;
+        cin.ignore(1, '\n');
 
         switch (input)
         {
@@ -255,6 +258,7 @@ void Passenger_dashboad(string &temp, vector<Passenger> &passList, vector<Carpoo
         case 4: // Purchase credit
             cout << "Enter the amount you want to purchase: ";
             cin >> amount;
+            cin.ignore(1, '\n');
             passList[index].purchaseCreditPoints(amount);
             break;
         case 5:
@@ -311,6 +315,7 @@ void Driver_dashboad(string &temp, vector<Driver> &driverList, vector<Carpool> &
 
         cout << "Enter your choice: ";
         cin >> input;
+        cin.ignore(1, '\n');
 
         switch (input)
         {
@@ -326,6 +331,7 @@ void Driver_dashboad(string &temp, vector<Driver> &driverList, vector<Carpool> &
         case 4:
             cout << "Enter the amount you want to purchase: ";
             cin >> amount;
+            cin.ignore(1, '\n');
             driverList[index].purchaseCreditPoints(amount); // Purchase credit
             break;
         case 5:

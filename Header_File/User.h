@@ -10,6 +10,7 @@
 #include <iomanip>
 #include <fstream>
 #include <sstream>
+#include <windows.h>
 
 #include "Rating.h"
 // #include "Carpooling.h"

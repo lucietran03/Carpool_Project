@@ -247,6 +247,7 @@ void User::userregister(vector<User> &userList)
         cout << " NOTE: This app only supports Saigon and Hanoi.";
         cout << " Enter your choice: ";
         cin >> choice;
+        cin.ignore(1, '\n');
 
         if (choice == 1)
             city = "SAI GON"; // Saigon selected
@@ -265,6 +266,7 @@ void User::userregister(vector<User> &userList)
         cout << "Please add at least $10 for first register. Press '0' if you want to know about this cost. \n";
         cout << "Please enter the money you want to add (You can only deposit round amounts): ";
         cin >> creditpoint;
+        cin.ignore(1, '\n');
 
         if (creditpoint >= 10)
         {
@@ -300,6 +302,7 @@ void User::userregister(vector<User> &userList)
         cout << "[4] Passenger & Driver\n";
         cout << "Enter your choice: ";
         cin >> choice;
+        cin.ignore(1, '\n');
 
         switch (choice)
         {
@@ -431,6 +434,7 @@ void User::updateprofile()
 
     cout << "Enter your choice(1-6): ";
     cin >> choice;
+    cin.ignore(1, '\n');
 
     switch (choice)
     {
@@ -523,6 +527,7 @@ void User::updateprofile()
             cout << " NOTE: This app only supports Saigon and Hanoi.";
             cout << " Enter your choice: ";
             cin >> choice;
+            cin.ignore(1, '\n');
 
             if (choice == 1)
                 city = "SAI GON"; // Saigon selected
@@ -609,14 +614,27 @@ void User::purchaseCreditPoints(double amount)
 // Function to log in
 bool login(string &temp, User &user, vector<User> &userList, int role)
 {
-    string input1, input2;
+    
+
+    string input1;
     cin.ignore();
     bool loginSuccess = false;
 
     cout << "Enter your username: ";
     getline(cin, input1);
+
+    // Enable password hiding
+    HANDLE hStdin = GetStdHandle(STD_INPUT_HANDLE); 
+    DWORD mode = 0;
+    GetConsoleMode(hStdin, &mode);
+    SetConsoleMode(hStdin, mode & (~ENABLE_ECHO_INPUT));
+
+    string input2;
     cout << "Enter your password: ";
     getline(cin, input2);
+
+    // Reset terminal state and cleans up
+    SetConsoleMode(hStdin, mode);
 
     // Attempt to log in
     for (auto &i : userList)
@@ -646,6 +664,7 @@ bool login(string &temp, User &user, vector<User> &userList, int role)
             cout << "Enter admin registration confirmation code: ";
             int admincode;
             cin >> admincode;
+            cin.ignore(1, '\n');
 
             if (admincode == ADMIN_CODE && user.getisAdmin())
             {

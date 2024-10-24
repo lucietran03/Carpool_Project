@@ -216,6 +216,8 @@ void Driver::delete_list(vector<Carpool> &carpoollist)
     // Prompt the driver to enter the carID to delete
     cout << "Please enter your carID that you want to delete: ";
     cin >> input;
+    cin.ignore(1, '\n');
+
     int i = 0;
 
     // Iterate through the carpool list to find the carpool with the specified carID
@@ -401,6 +403,7 @@ void Driver::set_rating(vector<Carpool> &carpool)
     // Prompt the driver to enter the car ID and the minimum rating
     cout << "Please enter the car ID that you want to set the minimum rating: ";
     cin >> input;
+    cin.ignore(1, '\n');
 
     // Iterate through the carpool list to find the carpool with the specified carID
     for (Carpool &apool : carpool)
@@ -438,6 +441,7 @@ void Driver::change_carpool_status(vector<Carpool> &carpool)
         // Prompt the driver to enter the car ID to change the status
         cout << "Please enter the car ID that you want to change the status (Press 0 to exit): ";
         cin >> input;
+        cin.ignore(1, '\n');
 
         // Iterate through the carpool list to find the carpool with the specified carID
         for (Carpool &apool : carpool)
@@ -489,6 +493,7 @@ void Driver::rate_passenger(vector<Carpool> &carpool, vector<Passenger> &passeng
     // Prompt the driver to enter the car ID and the passenger to rate
     cout << "Please enter the car ID that you want to rate the passenger: ";
     cin >> input;
+    cin.ignore(1, '\n');
 
     // Iterate through the carpool list to find the carpool with the specified carID
     for (Carpool &apool : carpool)
