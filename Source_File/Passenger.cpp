@@ -194,47 +194,47 @@ bool Passenger::cancel_carpool(vector<Carpool> &carpools, vector<Request> &reque
     return false;
 }
 
-bool loginPassenger(string &temp, Passenger &passenger, vector<User> &userList)
-{
-    string input1, input2;
-    cin.ignore();
-    bool loginSuccess = false;
+// bool loginPassenger(string &temp, Passenger &passenger, vector<User> &userList)
+// {
+//     string input1, input2;
+//     cin.ignore();
+//     bool loginSuccess = false;
 
-    cout << "Enter your username: ";
-    getline(cin, input1);
-    cout << "Enter your password: ";
-    getline(cin, input2);
+//     cout << "Enter your username: ";
+//     getline(cin, input1);
+//     cout << "Enter your password: ";
+//     getline(cin, input2);
 
-    // Attempt to log in
-    for (auto &i : userList)
-    {
-        if ((input1 == i.getUsername()) && (input2 == i.getPassword()))
-        {
-            // If login is successful, cast to Passenger
-            if (i.getisPassenger())
-            {
-                passenger = static_cast<Passenger>(i); // Assuming proper copy assignment is defined
-                cout << "Login successfully!\n";
-                loginSuccess = true;
-                break;
-            }
-            else
-            {
-                cout << "You are not a Passenger.\n";
-                return false;
-            }
-        }
-    }
+//     // Attempt to log in
+//     for (auto &i : userList)
+//     {
+//         if ((input1 == i.getUsername()) && (input2 == i.getPassword()))
+//         {
+//             // If login is successful, cast to Passenger
+//             if (i.getisPassenger())
+//             {
+//                 passenger = static_cast<Passenger>(i); // Assuming proper copy assignment is defined
+//                 cout << "Login successfully!\n";
+//                 loginSuccess = true;
+//                 break;
+//             }
+//             else
+//             {
+//                 cout << "You are not a Passenger.\n";
+//                 return false;
+//             }
+//         }
+//     }
 
-    if (!loginSuccess)
-    {
-        cout << "Failed to login!\n";
-        return false; // Failed login
-    }
+//     if (!loginSuccess)
+//     {
+//         cout << "Failed to login!\n";
+//         return false; // Failed login
+//     }
 
-    temp = input1;
-    return true; // Passenger role successful
-}
+//     temp = input1;
+//     return true; // Passenger role successful
+// }
 
 // Method to update the passenger's profile
 void Passenger::rating_carpool(vector<Carpool> &carpool_list, vector<Rating> &rating_list)

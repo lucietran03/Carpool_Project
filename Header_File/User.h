@@ -81,7 +81,7 @@ public:
     void purchaseCreditPoints(double amount);
     void calculateAverage();
     void viewheader();
-    friend bool login(string &temp, User &user, vector<User> &userList, int role); 
+    friend bool login(User &user, vector<User> &userList, int role); 
     string to_stringUser();
 };
 #endif

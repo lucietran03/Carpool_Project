@@ -26,7 +26,7 @@ public:
     friend class Admin;
     friend class Driver;
     // friend class Carpool;
-    friend bool loginPassenger(string &Temp, Passenger &passenger, vector<User> &userList);
+    // friend bool loginPassenger(string &Temp, Passenger &passenger, vector<User> &userList);
 };
 
 #endif
